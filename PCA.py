@@ -25,7 +25,7 @@ def load_data(data_folder):  #加载本地mnist数据集
     return (x_train, y_train), (x_test, y_test)
     
 #(train_images, train_labels), (test_images, test_labels) = load_data('/Users/apple/Desktop/dataSet/Mnist_FashionMnist/MNIST/raw/')
-(train_images, train_labels), (test_images, test_labels) = load_data('/home/disanda/Desktop/dataSet/Mnist/')
+(train_images, train_labels), (test_images, test_labels) = load_data('/home/disanda/Desktop/dataSet/MNIST/')
 #print("original training data shape:",train_images.shape) # [60000,28,28)]
 #print("original testing data shape:",test_images.shape) # [10000,28,28]
 train_data=train_images.reshape(60000,784) #变形
