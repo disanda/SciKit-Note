@@ -46,8 +46,6 @@ reduc = TSNE(n_components=3)
 train_data = reduc.fit_transform(train_data)
 test_data = reduc.fit_transform(test_data)
 
-
-
 #from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 
