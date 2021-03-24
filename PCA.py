@@ -31,7 +31,6 @@ def load_data(data_folder):  #加载本地mnist数据集
 train_data=train_images.reshape(60000,784) #变形
 test_data=test_images.reshape(10000,784)
 
-
 #------------------------降维-----------------------
 #from sklearn.decomposition import PCA
 #reduc = PCA(n_components = 2)
@@ -40,15 +39,15 @@ test_data=test_images.reshape(10000,784)
 #test_data = reduc.transform(test_data)
 
 
-from sklearn.manifold import TSNE
-reduc = TSNE(n_components=3)
-train_data = reduc.fit_transform(train_data)
-test_data = reduc.fit_transform(test_data)
+# from sklearn.manifold import TSNE
+# reduc = TSNE(n_components=3)
+# train_data = reduc.fit_transform(train_data)
+# test_data = reduc.fit_transform(test_data)
 
-#from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
+# #from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
-print("training data shape :",train_data.shape)
-print("testing data shape:",test_data.shape)
+# print("training data shape :",train_data.shape)
+# print("testing data shape:",test_data.shape)
 
 #------------------------分类-------------------------
 from sklearn.neighbors import KNeighborsClassifier #对降维后的mnist进行KNN分类
