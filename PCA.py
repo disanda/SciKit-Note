@@ -35,22 +35,21 @@ test_data=test_images.reshape(10000,784)
 #------------------------降维-----------------------
 #from sklearn.decomposition import PCA
 #reduc = PCA(n_components = 2)
-
-
+#reduc.fit(train_data) #fit PCA with training data instead of the whole dataset
+#train_data = reduc.transform(train_data)
+#test_data = reduc.transform(test_data)
+# print ("training data shape :",train_data_pca.shape)
+# print ("testing data shape:",test_data_pca.shape)
 
 from sklearn.manifold import TSNE
-reduc = TSNE(n_components=2)
+reduc = TSNE(n_components=3)
+train_data = reduc.fit_transform(train_data)
+test_data = reduc.fit_transform(test_data)
+
+
 
 #from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
-
-reduc.fit(train_data) #fit PCA with training data instead of the whole dataset
-train_data_pca = reduc.transform(train_data)
-test_data_pca = reduc.transform(test_data)
-
-print("Demention Reduction completed")
-print ("training data shape :",train_data_pca.shape)
-print ("testing data shape:",test_data_pca.shape)
 
 #------------------------分类-------------------------
 from sklearn.neighbors import KNeighborsClassifier #对降维后的mnist进行KNN分类
